@@ -38,7 +38,7 @@ class Program
                 ambitiousDictionary[item] = 1;
             }
         }
-        
+    
         // printPercentage(ambitiousDictionary, ambitiousArray.Length);
         
         // Quantitative continuous
@@ -135,15 +135,16 @@ class Program
     }
 
     public static string[,] jointBivariate(string[,] matrix,string variable1, string variable2){
+       
         string[] column = getColumn(matrix,variable1);
         string[] row = getColumn(matrix,variable2);
         string[] uniqueColumnValues = column.Distinct().ToArray();
         string[] uniqueRowValues = row.Distinct().ToArray();
-        int[] counter = new int[uniqueColumnValues.Length * uniqueRowValues.Length];        
+        //int[] counter = new int[uniqueColumnValues.Length * uniqueRowValues.Length];        
 
         string[,] matrix2 = new string[uniqueRowValues.Length+1,uniqueColumnValues.Length+1];
-        string truncated1 = variable1.Length <= 3 ? variable1 : variable1.Substring(0, 3);
-        string truncated2 = variable2.Length <= 3 ? variable2 : variable2.Substring(0, 3);
+        //string truncated1 = variable1.Length <= 3 ? variable1 : variable1.Substring(0, 3);
+        //string truncated2 = variable2.Length <= 3 ? variable2 : variable2.Substring(0, 3);
         matrix2[0,0] = "-";
 
         for(int i = 0; i < uniqueColumnValues.Length; i++){
@@ -156,7 +157,7 @@ class Program
     
         for(int i = 0; i < uniqueRowValues.Length; i++){
             for(int j = 0; j < uniqueColumnValues.Length; j++){
-                matrix2[i+1,j+1] = "tculo";
+                matrix2[i+1,j+1] = "values";
             }
         }  
         return matrix2;
